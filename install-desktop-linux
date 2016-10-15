@@ -1,0 +1,19 @@
+#!/bin/bash
+
+npm install
+dir=$(pwd)
+file=/usr/share/applications/mojibar.desktop
+
+touch $file
+cat <<EOM >> $file
+[Desktop Entry]
+Version=1.0
+Name=mojibar
+Comment=A thing to do stuff
+Exec=$dir/run
+Path=$dir
+Icon=$dir/mojibar.png
+Terminal=false
+Type=Application
+Categories=Utility;Application;Internet;
+EOM
